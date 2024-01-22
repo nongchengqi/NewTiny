@@ -14,7 +14,6 @@ import android.widget.TextView
 import com.zxy.tiny.Tiny
 import com.zxy.tiny.Tiny.BitmapCompressOptions
 import com.zxy.tiny.callback.BitmapCallback
-import com.zxy.tiny.core.HttpUrlConnectionFetcher
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileInputStream
@@ -262,14 +261,6 @@ class BitmapCompressTestActivity : BaseActivity() {
     private fun testUri() {
         val url = "http://7xswxf.com2.z0.glb.qiniucdn.com//blog/deec2ac0373d08eb85a.jpg"
         try {
-            Thread {
-                HttpUrlConnectionFetcher.fetch(url) { `is` ->
-                    val options = BitmapFactory.Options()
-                    options.inPreferredConfig = mConfig
-                    val originBitmap = BitmapFactory.decodeStream(`is`, null, options)
-                    runOnUiThread { setupOriginInfo(originBitmap) }
-                }
-            }.start()
             val compressOptions = BitmapCompressOptions()
             compressOptions.config = mConfig
             Tiny.getInstance().source(Uri.parse(url)).asBitmap().withOptions(compressOptions)

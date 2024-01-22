@@ -14,12 +14,10 @@ import android.widget.TextView
 import com.zxy.tiny.Tiny
 import com.zxy.tiny.Tiny.FileCompressOptions
 import com.zxy.tiny.callback.FileCallback
-import com.zxy.tiny.core.HttpUrlConnectionFetcher
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.io.IOException
 import java.io.InputStream
 
 class FileCompressTestActivity : BaseActivity() {
@@ -270,26 +268,6 @@ class FileCompressTestActivity : BaseActivity() {
     private fun testUri() {
         val url = "http://7xswxf.com2.z0.glb.qiniucdn.com//blog/deec2ac0373d08eb85a.jpg"
         try {
-            Thread {
-                HttpUrlConnectionFetcher.fetch(url) { `is` ->
-                    val options = BitmapFactory.Options()
-                    options.inPreferredConfig = mConfig
-                    try {
-                        val outfile = File(getExternalFilesDir(null), "test-network-img.jpg")
-                        val fos = FileOutputStream(outfile)
-                        val buffer = ByteArray(4096)
-                        var len = -1
-                        while (`is`.read(buffer).also { len = it } != -1) {
-                            fos.write(buffer, 0, len)
-                        }
-                        fos.close()
-                        val originBitmap = BitmapFactory.decodeFile(outfile.absolutePath, options)
-                        runOnUiThread { setupOriginInfo(originBitmap, outfile.length()) }
-                    } catch (e: IOException) {
-                        e.printStackTrace()
-                    }
-                }
-            }.start()
             val compressOptions = FileCompressOptions()
             compressOptions.config = mConfig
             Tiny.getInstance().source(Uri.parse(url)).asFile().withOptions(compressOptions)

@@ -220,19 +220,7 @@ public class FileCompressor {
 
         final Bitmap[] result = {null};
         if (UriUtil.isNetworkUri(uri)) {
-            HttpUrlConnectionFetcher.fetch(uri, new HttpUrlConnectionFetcher.ResponseCallback() {
-                @Override
-                public void callback(InputStream is) {
-                    byte[] decodeBytes = CompressKit.transformToByteArray(is);
-                    if (options.isKeepSampling) {
-                        BitmapFactory.Options decodeOptions = CompressKit.getDefaultDecodeOptions();
-                        decodeOptions.inPreferredConfig = options.config;
-                        result[0] = BitmapFactory.decodeByteArray(decodeBytes, 0, decodeBytes.length, decodeOptions);
-                    } else {
-                        result[0] = BitmapCompressor.compress(decodeBytes, options, true);
-                    }
-                }
-            });
+            return null;
 
         } else if (UriUtil.isLocalContentUri(uri) || UriUtil.isLocalFileUri(uri)) {
             String filePath = UriUtil.getRealPathFromUri(uri);

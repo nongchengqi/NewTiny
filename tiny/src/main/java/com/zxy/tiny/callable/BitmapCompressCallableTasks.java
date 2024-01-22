@@ -10,7 +10,6 @@ import com.zxy.tiny.common.TinyException;
 import com.zxy.tiny.common.UriUtil;
 import com.zxy.tiny.core.BitmapCompressor;
 import com.zxy.tiny.core.CompressKit;
-import com.zxy.tiny.core.HttpUrlConnectionFetcher;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -94,13 +93,7 @@ public class BitmapCompressCallableTasks {
         @Override
         public Bitmap call() throws Exception {
             if (UriUtil.isNetworkUri(mUri)) {
-                HttpUrlConnectionFetcher.fetch(mUri, new HttpUrlConnectionFetcher.ResponseCallback() {
-                    @Override
-                    public void callback(InputStream is) {
-                        mResult = BitmapCompressor.compress(CompressKit.transformToByteArray(is), mCompressOptions, true);
-                    }
-                });
-
+                return null;
             } else if (UriUtil.isLocalContentUri(mUri) || UriUtil.isLocalFileUri(mUri)) {
                 String filePath = UriUtil.getRealPathFromUri(mUri);
                 if (TextUtils.isEmpty(filePath))

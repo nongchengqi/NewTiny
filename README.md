@@ -49,11 +49,11 @@ The usage method is consistent with the original library, please refer to the fo
 ### **Installation**
 
 ```
-implementation 'com.zxy.android:tiny:1.1.0'
+implementation(files("src/main/libs/newtiny-release_v1.0.0.aar"))
 ```
 
 ### **Choose an abi**
-**Tiny** provide abi：`armeabi`、`armeabi-v7a`、`arm64-v8a`、`x86`.
+**Tiny** provide abi：`armeabi-v7a`、`arm64-v8a`、`x86_64`、`x86`.
 
 Choose what you need **"abi"** version：
 
@@ -61,7 +61,7 @@ Choose what you need **"abi"** version：
 android {
     defaultConfig {
         ndk {
-            abiFilters 'armeabi','x86'//or armeabi-v7a、arm64-v8a、x86
+            abiFilters 'armeabi-v7a','x86'//or arm64-v8a、x86_64
         }
     }
 }
@@ -70,7 +70,7 @@ android {
 ### **Initialization**
 
 ```
-        Tiny.getInstance().init(this);
+        //Tiny.getInstance().init(this); //unnecessary
 ```
 ### **Compression**
 

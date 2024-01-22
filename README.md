@@ -162,25 +162,6 @@ android {
         FileWithBitmapBatchResult result = Tiny.getInstance().source("").batchAsFile().withOptions(options).batchCompressWithReturnBitmapResult();
 ```
 
-## **Version**
-
-* **v0.0.1**：The first version.
-* **v0.0.2**：Optimize the compression strategy,and handle with the orientation of bitmap.
-* **v0.0.3**：Unified as `libtiny.so`
-* **v0.0.4**：Add cover source file configuration—see`{@link FileCompressOptions#overrideSource}`, and setting up the batch compressed file paths—see  `{@link BatchFileCompressOptions#outfiles}`
-* **v0.0.5**：Fix google store reject.
-* **v0.0.6**：Initialization is not must.Add clear compression directory method,see`{@link Tiny#clearCompressDirectory}`
-* **v0.0.7**：fix issue#29
-* **v0.1.0**：Add exception thrown interface, add the `Throwable` parameter to the callback method `{@link xxxxCallback#callback}`, see [Update Introduce](https://github.com/Sunzxyong/Tiny/issues/38)
-* **v1.0.0**：Add synchronous compression method and compression directory Settings.
-* **v1.1.0**：Add baseline setting support.
-
-## **About**
-* **Blog**：[https://zhengxiaoyong.com](https://zhengxiaoyong.com)
-* **Wechat**：
-
-![](https://raw.githubusercontent.com/Sunzxyong/ImageRepository/master/qrcode.jpg)
-
 ## **License**
 
 >

@@ -170,7 +170,7 @@ android {
 >     Version 2.0, January 2004
 >     http://www.apache.org/licenses/
 >
->     Copyright 2018 郑晓勇
+>     Copyright 2024 evannong
 >
 >  Licensed under the Apache License, Version 2.0 (the "License");
 >  you may not use this file except in compliance with the License.

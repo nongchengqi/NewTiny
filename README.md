@@ -1,5 +1,6 @@
 # **NewTiny**
 an image compression framework base on Tiny.
+
 基于Tiny修改的一个轻量级图片压缩库
 
 
@@ -8,9 +9,13 @@ Base on: https://github.com/Sunzxyong/Tiny
 
 修改点：
 1.使用了最新的libjpeg-turbo进行编译（ver3.0.1）
+
 2.增加了x86/x86_64架构的支持
+
 3.修复了谷歌上架X509TrustManager的警告
+
 4.迁移到了AndroidX,使用最新版的AGP和Gradle 8.+
+
 5.NDK的编译由MK文件迁移到cmake实现
 
 Modification points:

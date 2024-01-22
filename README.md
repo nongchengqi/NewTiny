@@ -8,6 +8,7 @@ an image compression framework base on Tiny.
 Base on: https://github.com/Sunzxyong/Tiny
 
 修改点：
+
 1.使用了最新的libjpeg-turbo进行编译（ver3.0.1）
 
 2.增加了x86/x86_64架构的支持
@@ -26,6 +27,7 @@ Modification points:
 5. NDK compilation is implemented by migrating MK files to cmake
 
 The usage method is consistent with the original library, please refer to the following instructions:
+
 [使用方法和原库保持一致，请参考以下说明：]
 
 ----

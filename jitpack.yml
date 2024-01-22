@@ -1,2 +1,2 @@
 install:
-  - ./gradlew :tiny:clean :tiny:publishReleasePublicationToMavenLocal
+  - ./gradlew :tiny:clean :tiny:publishToMavenLocal

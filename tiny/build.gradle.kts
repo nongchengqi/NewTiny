@@ -36,9 +36,9 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.evan.tiny"
-            artifactId = "new-tiny"
-            version = "1.0"
+            groupId = "com.github.nongchengqi"
+            artifactId = "NewTiny"
+            version = "v1.0.0"
 
             afterEvaluate {
                 from(components["release"])
